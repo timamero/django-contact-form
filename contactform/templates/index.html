@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+        {% block content %}
+        <div class="content-container">
+            <h1>Contact Us</h1>
+            <div class="page-content">
+                <section class="contact">           
+                    <form class="" id="contact-form" action="" method="post">
+                        {% csrf_token %}
+                        {% for field in form %}
+                        <div class="fieldWrapper">
+                            {{ field }} 
+                            {% if field.errors %}
+                                <ul style="list-style-type: none; padding:0px; margin:px; width:18.75rem; color: red;">
+                                {% for error in field.errors %}
+                                    <li><p>{{ error }}<p></li>
+                                {% endfor %}                                
+                                </ul>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                        <button type="submit">Submit</button>
+                    </form>
+                </section>  
+                <div class="page-img-container">
+                    {% load static %}
+                    <img class="chat-img" src="{% static '/images/chat-svgrepo-com.svg' %}" alt="">
+                </div>          
+            </div>        
+        </div>
+        {% endblock content %}
+ 

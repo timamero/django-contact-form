@@ -1,0 +1,213 @@
+/*=============================================*/
+/*                   Imports                   */
+/*=============================================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+/*=============================================*/
+/*                  Variables                  */
+/*=============================================*/
+:root {
+  --white-purple-tint: #F4F3F5;
+  --purple: #8626E5;
+  --green-grey-tint: #65716B;
+  --ash-grey: #C0CCC6;
+
+  --heading-font: 'Abril Fatface', cursive;
+  --content-font: 'Open Sans', sans-serif;
+
+  --all-transition: all 0.25s linear;
+
+  --debug: 1px dashed red;
+}
+
+/*=============================================*/
+/*               Global Styling                */
+/*=============================================*/
+/* Reference for html border-box styling: https://css-tricks.com/box-sizing/ */
+/* With the following CSS, padding and border are included in the width and height */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
+
+html, body{
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  background-color: var(--white-purple-tint);
+  color: var(--green-grey-tint);
+  /* border: var(--debug); */
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* border: var(--debug); */
+}
+
+main {
+  flex: 1 1 auto;
+  /* border: var(--debug); */
+}
+
+footer {
+  flex: 0 0 2.5rem;
+  height: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: var(--debug); */
+}
+
+h1 {
+  margin: 0px;
+  padding: 16px 0px;
+  font-family: var(--heading-font);
+  text-align: center;
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+}
+
+a, p, input, textarea {
+  font-family: var(--content-font);
+  font-size: 0.75rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--purple);
+  font-weight: 600;
+  border-radius: 0.2rem;
+  border: 2px solid var(--white-purple-tint);
+  transition: var(--all-transition);
+}
+
+a:hover {
+  border-bottom: 2px solid var(--purple);
+}
+
+
+/*=============================================*/
+/*               Navbar Styling                */
+/*=============================================*/
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 0 0 3rem;
+  border-bottom: 3px solid var(--green-grey-tint);
+}
+
+.nav-link {
+  margin: 0px 8px;
+  padding: 0px 8px;
+}
+
+/*=============================================*/
+/*            Page Content Styling             */
+/*=============================================*/
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  height: 100%;
+}
+
+h1 {
+  flex: 0 1 auto;
+}
+
+.page-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.contact {
+  display: block;
+  margin: auto;
+}
+
+.page-img-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-img{
+  width: 18.75rem;
+}
+
+/* Form Styling */
+input, textarea, button {
+  width: 18.75rem;
+}
+
+input, textarea {
+  background-color: inherit;
+  margin-top: 8px;
+}
+
+input {
+  padding: 4px;
+  border: none;
+  border-bottom: 2px solid var(--green-grey-tint);
+}
+
+textarea {
+  border: 2px solid var(--green-grey-tint);
+  border-radius: 0.4rem;
+}
+
+button {
+  padding: 8px;
+  background-color: var(--purple);
+  border: none;
+  border-radius: 0.4rem;
+  color: var(--white-purple-tint);
+  font-family: var(--heading-font);
+  transition: var(--all-transition);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--ash-grey);
+  color: black;
+}
+/* End Form Styling */
+
+/* Success Page Styling */
+.success-message {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+/* End Success Page Styling */
+/*=============================================*/
+/*                Media Queries                */
+/*=============================================*/
+@media screen and (max-width: 760px) {
+  .page-content {
+    grid-template-columns: auto;
+  }
+  .page-img-container {
+    display: none;
+  }
+}
