@@ -10,7 +10,7 @@ When the form is submitted, data is saved to database and emailed to the list of
 ## Instructions
 Clone this project
 ```
-https://github.com/timamero/django-recipe-please.git
+https://github.com/timamero/django-contact-form.git
 ```
 
 Install Dependencies
